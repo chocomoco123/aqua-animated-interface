@@ -5,17 +5,17 @@ import FloatingBubbles from '@/components/FloatingBubbles';
 import { Lightbulb, Circle } from 'lucide-react';
 
 const Index = () => {
-  const [mainLightActive, setMainLightActive] = useState(true);
+  const [mainLightActive, setMainLightActive] = useState(false);
   const [nightLightActive, setNightLightActive] = useState(false);
 
-  const toggleMainLight = () => {
-    setMainLightActive(!mainLightActive);
-    console.log('Main light toggled:', !mainLightActive);
+  const toggleMainLight = (isActive: boolean) => {
+    setMainLightActive(isActive);
+    console.log('Main light toggled:', isActive);
   };
 
-  const toggleNightLight = () => {
-    setNightLightActive(!nightLightActive);
-    console.log('Night light toggled:', !nightLightActive);
+  const toggleNightLight = (isActive: boolean) => {
+    setNightLightActive(isActive);
+    console.log('Night light toggled:', isActive);
   };
 
   return (
@@ -31,8 +31,8 @@ const Index = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="text-aquarium-cyan text-4xl animate-wave">
-              🌊
+            <div className="text-aquarium-cyan text-4xl">
+              <Lightbulb className="w-10 h-10" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white">
               Aquarium Control Panel
@@ -43,7 +43,7 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Control Cards Grid */}
+        {/* Control Cards Grid - Fixed positioning */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <ControlCard
             title="Main Light"
@@ -58,18 +58,6 @@ const Index = () => {
             isActive={nightLightActive}
             onToggle={toggleNightLight}
           />
-        </div>
-
-        {/* Additional Decorative Elements */}
-        <div className="fixed bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-aquarium-deep/80 to-transparent pointer-events-none">
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-            <div className="flex gap-4 text-aquarium-cyan/40">
-              <div className="animate-wave" style={{ animationDelay: '0s' }}>🐠</div>
-              <div className="animate-wave" style={{ animationDelay: '0.5s' }}>🐟</div>
-              <div className="animate-wave" style={{ animationDelay: '1s' }}>🐠</div>
-              <div className="animate-wave" style={{ animationDelay: '1.5s' }}>🐟</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
