@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -94,6 +93,49 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
+
+/* Light Theme Variables */
+.light-theme {
+  --aquarium-deep: #e3f2fd;
+  --aquarium-dark: #bbdefb;
+  --aquarium-medium: #90caf9;
+  --aquarium-light: #64b5f6;
+  --aquarium-cyan: #0288d1;
+  --aquarium-teal: #0277bd;
+}
+
+/* Dark Theme Variables (default) */
+.dark-theme,
+:root {
+  --aquarium-deep: #0a1828;
+  --aquarium-dark: #1e3a5f;
+  --aquarium-medium: #2d5a87;
+  --aquarium-light: #4a90b8;
+  --aquarium-cyan: #00bcd4;
+  --aquarium-teal: #26a69a;
+}
+
+/* Dynamic color application */
+.bg-aquarium-deep { background-color: var(--aquarium-deep); }
+.bg-aquarium-dark { background-color: var(--aquarium-dark); }
+.bg-aquarium-medium { background-color: var(--aquarium-medium); }
+.bg-aquarium-light { background-color: var(--aquarium-light); }
+.bg-aquarium-cyan { background-color: var(--aquarium-cyan); }
+.bg-aquarium-teal { background-color: var(--aquarium-teal); }
+
+.text-aquarium-deep { color: var(--aquarium-deep); }
+.text-aquarium-dark { color: var(--aquarium-dark); }
+.text-aquarium-medium { color: var(--aquarium-medium); }
+.text-aquarium-light { color: var(--aquarium-light); }
+.text-aquarium-cyan { color: var(--aquarium-cyan); }
+.text-aquarium-teal { color: var(--aquarium-teal); }
+
+.border-aquarium-deep { border-color: var(--aquarium-deep); }
+.border-aquarium-dark { border-color: var(--aquarium-dark); }
+.border-aquarium-medium { border-color: var(--aquarium-medium); }
+.border-aquarium-light { border-color: var(--aquarium-light); }
+.border-aquarium-cyan { border-color: var(--aquarium-cyan); }
+.border-aquarium-teal { border-color: var(--aquarium-teal); }
 
 /* Custom scrollbar for aquarium theme */
 ::-webkit-scrollbar {
