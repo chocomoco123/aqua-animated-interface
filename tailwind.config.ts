@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				aquarium: {
+					deep: '#0a1828',
+					dark: '#1e3a5f',
+					medium: '#2d5a87',
+					light: '#4a90b8',
+					cyan: '#00bcd4',
+					teal: '#26a69a'
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,46 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bubble-float': {
+					'0%': {
+						transform: 'translateY(100vh) translateX(0px)',
+						opacity: '0'
+					},
+					'10%': {
+						opacity: '1'
+					},
+					'90%': {
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateY(-100px) translateX(50px)',
+						opacity: '0'
+					}
+				},
+				'wave': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-20px)'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(0, 188, 212, 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(0, 188, 212, 0.6)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bubble-float': 'bubble-float linear infinite',
+				'wave': 'wave 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite'
 			}
 		}
 	},
