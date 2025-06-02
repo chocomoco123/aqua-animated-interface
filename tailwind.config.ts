@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -96,7 +95,7 @@ export default {
 				},
 				'bubble-float': {
 					'0%': {
-						transform: 'translateY(100vh) translateX(0px)',
+						transform: 'translateY(100vh) translateX(0px) rotate(0deg)',
 						opacity: '0'
 					},
 					'10%': {
@@ -106,16 +105,16 @@ export default {
 						opacity: '1'
 					},
 					'100%': {
-						transform: 'translateY(-100px) translateX(50px)',
+						transform: 'translateY(-100px) translateX(50px) rotate(360deg)',
 						opacity: '0'
 					}
 				},
 				'wave': {
 					'0%, 100%': {
-						transform: 'translateY(0px)'
+						transform: 'translateY(0px) rotate(0deg)'
 					},
 					'50%': {
-						transform: 'translateY(-20px)'
+						transform: 'translateY(-10px) rotate(5deg)'
 					}
 				},
 				'glow': {
@@ -125,6 +124,16 @@ export default {
 					'50%': {
 						boxShadow: '0 0 40px rgba(0, 188, 212, 0.6)'
 					}
+				},
+				'ripple': {
+					'0%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'scale(1.2)',
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
@@ -132,7 +141,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'bubble-float': 'bubble-float linear infinite',
 				'wave': 'wave 3s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'glow': 'glow 2s ease-in-out infinite',
+				'ripple': 'ripple 0.6s ease-out'
 			}
 		}
 	},
