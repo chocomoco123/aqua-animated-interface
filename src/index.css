@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,9 +100,9 @@
   --aquarium-deep: #e3f2fd;
   --aquarium-dark: #bbdefb;
   --aquarium-medium: #90caf9;
-  --aquarium-light: #64b5f6;
-  --aquarium-cyan: #0288d1;
-  --aquarium-teal: #0277bd;
+  --aquarium-light: #1976d2;
+  --aquarium-cyan: #1565c0;
+  --aquarium-teal: #0d47a1;
 }
 
 /* Dark Theme Variables (default) */
@@ -136,6 +137,15 @@
 .border-aquarium-light { border-color: var(--aquarium-light); }
 .border-aquarium-cyan { border-color: var(--aquarium-cyan); }
 .border-aquarium-teal { border-color: var(--aquarium-teal); }
+
+/* Light theme text colors for better visibility */
+.light-theme .text-white {
+  color: var(--aquarium-teal) !important;
+}
+
+.light-theme .text-aquarium-light {
+  color: var(--aquarium-cyan) !important;
+}
 
 /* Custom scrollbar for aquarium theme */
 ::-webkit-scrollbar {
@@ -213,6 +223,14 @@
 
 .aquarium-glow {
   animation: aquarium-glow 2s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
 }
 
 /* Interactive hover effects */
