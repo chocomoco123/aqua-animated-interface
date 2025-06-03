@@ -73,7 +73,7 @@ const ControlCard: React.FC<ControlCardProps> = ({ title, icon, isActive, onTogg
 
   const getStatusText = () => {
     if (mode === 'auto') {
-      return `Auto Mode - ${isActive ? 'ON' : 'OFF'}`;
+      return `Auto - ${isActive ? 'ON' : 'OFF'}`;
     }
     return isActive ? 'Active' : 'Inactive';
   };
@@ -94,54 +94,57 @@ const ControlCard: React.FC<ControlCardProps> = ({ title, icon, isActive, onTogg
           </div>
           <h3 className="text-white text-xl font-semibold hover:text-aquarium-cyan transition-colors duration-300">{title}</h3>
         </div>
-        <Dialog open={isRenameOpen} onOpenChange={setIsRenameOpen}>
-          <DialogTrigger asChild>
-            <Button 
-              variant="ghost" 
-              size="icon"
-              className="text-aquarium-light hover:text-aquarium-cyan transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-aquarium-cyan/10"
-            >
-              <Settings className="h-5 w-5" />
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="bg-aquarium-dark/95 border-aquarium-cyan/30 backdrop-blur-sm">
-            <DialogHeader>
-              <DialogTitle className="text-white">Rename Control</DialogTitle>
-            </DialogHeader>
-            <div className="space-y-4">
-              <Input
-                value={newName}
-                onChange={(e) => setNewName(e.target.value)}
-                placeholder="Enter new name"
-                className="bg-aquarium-medium/50 border-aquarium-cyan/30 text-white placeholder:text-aquarium-light/60"
-              />
-              <div className="flex gap-2">
-                <Button
-                  onClick={handleRename}
-                  className="bg-aquarium-cyan hover:bg-aquarium-teal text-white"
-                >
-                  Save
-                </Button>
-                <Button
-                  onClick={() => setIsRenameOpen(false)}
-                  variant="outline"
-                  className="border-aquarium-light/30 text-aquarium-light hover:bg-aquarium-light/10"
-                >
-                  Cancel
-                </Button>
+        
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 px-3 py-1 bg-aquarium-deep/50 rounded-lg border border-aquarium-light/20">
+            <Circle 
+              className={`h-3 w-3 ${getStatusColor()} fill-current animate-pulse`}
+            />
+            <span className={`text-xs font-medium ${getStatusColor()}`}>
+              {getStatusText()}
+            </span>
+          </div>
+          
+          <Dialog open={isRenameOpen} onOpenChange={setIsRenameOpen}>
+            <DialogTrigger asChild>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="text-aquarium-light hover:text-aquarium-cyan transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-aquarium-cyan/10"
+              >
+                <Settings className="h-5 w-5" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="bg-aquarium-dark/95 border-aquarium-cyan/30 backdrop-blur-sm">
+              <DialogHeader>
+                <DialogTitle className="text-white">Rename Control</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4">
+                <Input
+                  value={newName}
+                  onChange={(e) => setNewName(e.target.value)}
+                  placeholder="Enter new name"
+                  className="bg-aquarium-medium/50 border-aquarium-cyan/30 text-white placeholder:text-aquarium-light/60"
+                />
+                <div className="flex gap-2">
+                  <Button
+                    onClick={handleRename}
+                    className="bg-aquarium-cyan hover:bg-aquarium-teal text-white"
+                  >
+                    Save
+                  </Button>
+                  <Button
+                    onClick={() => setIsRenameOpen(false)}
+                    variant="outline"
+                    className="border-aquarium-light/30 text-aquarium-light hover:bg-aquarium-light/10"
+                  >
+                    Cancel
+                  </Button>
+                </div>
               </div>
-            </div>
-          </DialogContent>
-        </Dialog>
-      </div>
-
-      <div className="flex items-center gap-2 mb-6 p-3 bg-aquarium-deep/50 rounded-lg border border-aquarium-light/20 hover:border-aquarium-cyan/40 transition-all duration-300 hover:bg-aquarium-deep/70">
-        <Circle 
-          className={`h-3 w-3 ${getStatusColor()} fill-current animate-pulse`}
-        />
-        <span className={`text-sm font-medium ${getStatusColor()}`}>
-          {getStatusText()}
-        </span>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
 
       <div className="flex-1 flex items-end">
