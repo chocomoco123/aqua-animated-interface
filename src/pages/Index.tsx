@@ -1,10 +1,11 @@
-
 import React, { useState } from 'react';
 import ControlCard from '@/components/ControlCard';
+import WaterParametersCard from '@/components/WaterParametersCard';
+import MachineStatusChart from '@/components/MachineStatusChart';
 import FloatingBubbles from '@/components/FloatingBubbles';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/contexts/ThemeContext';
-import { Lightbulb, Circle, Waves, Thermometer, Zap, Fan } from 'lucide-react';
+import { Lightbulb, Circle, Waves, Thermometer, Zap, Fan, Wind, Droplet2, Power, Settings2 } from 'lucide-react';
 
 const Index = () => {
   const [mainLightActive, setMainLightActive] = useState(false);
@@ -62,11 +63,18 @@ const Index = () => {
         <div className="relative z-20 container mx-auto px-4 py-8">
           <div className="text-center mb-8">
             <p className="text-aquarium-light text-lg hover:text-aquarium-cyan transition-colors duration-300">
-              Manage your aquarium lighting and environment controls
+              Monitor and control your aquarium environment
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {/* Dashboard Charts Section */}
+          <div className="grid lg:grid-cols-2 gap-6 mb-8">
+            <WaterParametersCard />
+            <MachineStatusChart />
+          </div>
+
+          {/* Control Cards Section */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-full mx-auto">
             <ControlCard
               title={mainLightName}
               icon={<Lightbulb />}
@@ -113,6 +121,38 @@ const Index = () => {
               isActive={coolerActive}
               onToggle={toggleCooler}
               onRename={setCoolerName}
+            />
+
+            <ControlCard
+              title="UV Sterilizer"
+              icon={<Power />}
+              isActive={false}
+              onToggle={() => console.log('UV Sterilizer toggled')}
+              onRename={() => {}}
+            />
+
+            <ControlCard
+              title="Water Pump"
+              icon={<Droplet2 />}
+              isActive={true}
+              onToggle={() => console.log('Water Pump toggled')}
+              onRename={() => {}}
+            />
+
+            <ControlCard
+              title="Auto Feeder"
+              icon={<Settings2 />}
+              isActive={false}
+              onToggle={() => console.log('Auto Feeder toggled')}
+              onRename={() => {}}
+            />
+
+            <ControlCard
+              title="Ventilation"
+              icon={<Wind />}
+              isActive={true}
+              onToggle={() => console.log('Ventilation toggled')}
+              onRename={() => {}}
             />
           </div>
         </div>
