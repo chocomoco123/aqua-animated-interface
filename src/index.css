@@ -97,9 +97,9 @@
 
 /* Light Theme Variables */
 .light-theme {
-  --aquarium-deep: #e3f2fd;
-  --aquarium-dark: #bbdefb;
-  --aquarium-medium: #90caf9;
+  --aquarium-deep: #ffffff;
+  --aquarium-dark: #f8fafc;
+  --aquarium-medium: #e2e8f0;
   --aquarium-light: #1976d2;
   --aquarium-cyan: #1565c0;
   --aquarium-teal: #0d47a1;
@@ -137,15 +137,6 @@
 .border-aquarium-light { border-color: var(--aquarium-light); }
 .border-aquarium-cyan { border-color: var(--aquarium-cyan); }
 .border-aquarium-teal { border-color: var(--aquarium-teal); }
-
-/* Light theme text colors for better visibility */
-.light-theme .text-white {
-  color: var(--aquarium-teal) !important;
-}
-
-.light-theme .text-aquarium-light {
-  color: var(--aquarium-cyan) !important;
-}
 
 /* Custom scrollbar for aquarium theme */
 ::-webkit-scrollbar {
