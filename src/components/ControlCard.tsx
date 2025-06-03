@@ -86,19 +86,19 @@ const ControlCard: React.FC<ControlCardProps> = ({ title, icon, isActive, onTogg
   };
 
   return (
-    <Card className="bg-gradient-to-br from-aquarium-dark/90 to-aquarium-medium/70 backdrop-blur-sm border-2 border-aquarium-light/40 p-6 hover:border-aquarium-cyan/60 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-aquarium-cyan/20 hover:scale-[1.02] transform hover:-translate-y-1 min-h-[300px] flex flex-col">
-      <div className="flex items-center justify-between mb-6">
+    <Card className="bg-gradient-to-br from-aquarium-dark/90 to-aquarium-medium/70 backdrop-blur-sm border-2 border-aquarium-light/40 p-4 hover:border-aquarium-cyan/60 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-aquarium-cyan/20 hover:scale-[1.02] transform hover:-translate-y-1 min-h-[220px] flex flex-col">
+      <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-3">
-          <div className="text-aquarium-cyan text-2xl animate-glow hover:scale-110 transition-transform duration-300">
+          <div className="text-aquarium-cyan text-xl animate-glow hover:scale-110 transition-transform duration-300">
             {icon}
           </div>
-          <h3 className="text-white text-xl font-semibold hover:text-aquarium-cyan transition-colors duration-300">{title}</h3>
+          <h3 className="text-white text-lg font-semibold hover:text-aquarium-cyan transition-colors duration-300">{title}</h3>
         </div>
         
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 px-3 py-1 bg-aquarium-deep/50 rounded-lg border border-aquarium-light/20">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 px-2 py-1 bg-aquarium-deep/50 rounded-lg border border-aquarium-light/20">
             <Circle 
-              className={`h-3 w-3 ${getStatusColor()} fill-current animate-pulse`}
+              className={`h-2 w-2 ${getStatusColor()} fill-current animate-pulse`}
             />
             <span className={`text-xs font-medium ${getStatusColor()}`}>
               {getStatusText()}
@@ -110,9 +110,9 @@ const ControlCard: React.FC<ControlCardProps> = ({ title, icon, isActive, onTogg
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="text-aquarium-light hover:text-aquarium-cyan transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-aquarium-cyan/10"
+                className="text-aquarium-light hover:text-aquarium-cyan transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-aquarium-cyan/10 h-8 w-8"
               >
-                <Settings className="h-5 w-5" />
+                <Settings className="h-4 w-4" />
               </Button>
             </DialogTrigger>
             <DialogContent className="bg-aquarium-dark/95 border-aquarium-cyan/30 backdrop-blur-sm">
@@ -148,29 +148,29 @@ const ControlCard: React.FC<ControlCardProps> = ({ title, icon, isActive, onTogg
       </div>
 
       <div className="flex-1 flex items-end">
-        <div className="w-full grid grid-cols-3 gap-3 p-4 bg-aquarium-deep/30 rounded-lg border-2 border-aquarium-light/30 hover:border-aquarium-cyan/50 transition-all duration-300">
+        <div className="w-full grid grid-cols-3 gap-2 p-3 bg-aquarium-deep/30 rounded-lg border-2 border-aquarium-light/30 hover:border-aquarium-cyan/50 transition-all duration-300">
           <Button
-            className={`flex flex-col items-center gap-2 h-20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${getButtonColor('off')}`}
+            className={`flex flex-col items-center gap-1 h-16 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${getButtonColor('off')}`}
             onClick={() => handleModeChange('off')}
           >
-            <Power className="h-6 w-6" />
-            <span className="text-sm font-medium">Off</span>
+            <Power className="h-5 w-5" />
+            <span className="text-xs font-medium">Off</span>
           </Button>
 
           <Button
-            className={`flex flex-col items-center gap-2 h-20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${getButtonColor('auto')}`}
+            className={`flex flex-col items-center gap-1 h-16 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${getButtonColor('auto')}`}
             onClick={() => handleModeChange('auto')}
           >
-            <Circle className="h-6 w-6" />
-            <span className="text-sm font-medium">Auto</span>
+            <Circle className="h-5 w-5" />
+            <span className="text-xs font-medium">Auto</span>
           </Button>
 
           <Button
-            className={`flex flex-col items-center gap-2 h-20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${getButtonColor('on')}`}
+            className={`flex flex-col items-center gap-1 h-16 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${getButtonColor('on')}`}
             onClick={() => handleModeChange('on')}
           >
-            <Lightbulb className="h-6 w-6" />
-            <span className="text-sm font-medium">On</span>
+            <Lightbulb className="h-5 w-5" />
+            <span className="text-xs font-medium">On</span>
           </Button>
         </div>
       </div>
